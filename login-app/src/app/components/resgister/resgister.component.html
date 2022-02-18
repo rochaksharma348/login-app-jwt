@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <div class="card px-5 py-5" id="form1">
+                <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()">
+                    <!-- User form group -->
+                    <div formGroupName="user">
+                        <div class="form-data">
+                            <div class="forms-inputs mb-4"> <span>First Name</span>
+                                <input formControlName="firstName" type="text">
+                                <div *ngIf="(firstName.invalid && (firstName.dirty || firstName.touched))">
+                                    <div style="color: rgb(226, 19, 19);">
+                                        First Name is required!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="forms-inputs mb-4"> <span>Last Name</span>
+                                <input formControlName="lastName" type="text">
+                                <div *ngIf="(lastName.invalid && (lastName.dirty || lastName.touched))">
+                                    <div style="color: rgb(226, 19, 19);">
+                                        Last Name is required!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="forms-inputs mb-4"> <span>username</span>
+                                <input formControlName="username" type="text">
+                                <div *ngIf="(username.invalid && (username.dirty || username.touched))">
+                                    <div style="color: rgb(226, 19, 19);">
+                                        A valid username is required!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="forms-inputs mb-4"> <span>Password</span> 
+                                <input formControlName="password" type="password">
+                                <div *ngIf="(password.invalid && (password.dirty || password.touched))">
+                                    <div style="color: rgb(226, 19, 19);">
+                                        Password must be at lease 8 character and should contain at least 1 uppercase and lowercase letter, number and special character!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="forms-inputs mb-4"> <span>Email</span>
+                                <input formControlName="email" type="text">
+                                <div *ngIf="(email.invalid && (email.dirty || email.touched))">
+                                    <div style="color: rgb(226, 19, 19);">
+                                        A valid email is required!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3"> 
+                                <button type="submit"
+                                    class="btn btn-dark w-100">Register
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    Back to <a routerLink="/login"> login! </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
